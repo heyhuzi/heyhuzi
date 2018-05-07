@@ -7,8 +7,13 @@ use Illuminate\Database\Migration;
 /**
  * create task table
  */
-class CreateTasksTable extends AnotherClass
+class CreateTasksTable extends Migration
 {
+    /**
+     * Run the migrations
+     *
+     * @return void
+     */
     public function up()
     {
         Schema::create('tasks', function (Blueprint $table) {
@@ -28,5 +33,15 @@ class CreateTasksTable extends AnotherClass
             $table->timestamp('update_at');
             $table->timestamp('created_at')->nullable();
         });
+    }
+
+    /**
+     * Reverse the migrations
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Sehema::dropIfExists('tasks');
     }
 }
