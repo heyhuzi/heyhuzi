@@ -2,15 +2,12 @@
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Database\Migration;
+use Illuminate\Database\Migrations\Migration;
 
-/**
- * create task table
- */
 class CreateTasksTable extends Migration
 {
     /**
-     * Run the migrations
+     * Run the migrations.
      *
      * @return void
      */
@@ -30,18 +27,17 @@ class CreateTasksTable extends Migration
             $table->string('creator');
             $table->string('owner');
             $table->string('followers');
-            $table->timestamp('update_at');
-            $table->timestamp('created_at')->nullable();
+            $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations
+     * Reverse the migrations.
      *
      * @return void
      */
     public function down()
     {
-        Sehema::dropIfExists('tasks');
+        Schema::drop('tasks');
     }
 }
