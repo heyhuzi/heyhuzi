@@ -50,7 +50,10 @@ return [
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
-            'strict' => true,
+            /* the error of mysql 8.0.11
+            Syntax error or access violation: 1231 Variable 'sql_mode' can't be set to the value of 'NO_AUTO_CREATE_USER'
+            change strict from true to false */
+            'strict' => false,
             'engine' => null,
         ],
 
