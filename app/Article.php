@@ -14,6 +14,8 @@ class Article extends Model
         'editor',
         'status',
         'type',
-        'tags'
+        'tags',
+        'copyright',
+        'channel'
     ];
 }

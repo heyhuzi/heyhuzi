@@ -23,6 +23,8 @@ class CreateArticlesTable extends Migration
             $table->string('status');
             $table->string('type');
             $table->string('tags');
+            $table->string('copyright');
+            $table->string('channel');
             $table->timestamps();
         });
     }

@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
+use App\Article;
 
 class ArticlesTableSeeder extends Seeder
 {
@@ -13,7 +14,7 @@ class ArticlesTableSeeder extends Seeder
     {
         Article::truncate();
 
-        $faker = \Faker\Factory:create();
+        $faker = \Faker\Factory::create();
 
         $status = array('draft', 'analyzing', 'pending', 'published', 'withdraw', 'refused', 'forbidden', 'reported');
         $type = array('news', 'video', 'gallery');
@@ -26,7 +27,9 @@ class ArticlesTableSeeder extends Seeder
                 'writer' => $faker->name,
                 'editor' => $faker->word,
                 'status' => $faker->randomElement($status),
-                'type' => $faker->randomElement($type)
+                'type' => $faker->randomElement($type),
+                'tags' => $faker->word,
+                'channel' => $faker->word
             ]);
         }
     }

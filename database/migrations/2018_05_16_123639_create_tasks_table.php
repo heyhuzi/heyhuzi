@@ -24,7 +24,7 @@ class CreateTasksTable extends Migration
             $table->string('status');
             $table->string('subtasks');
             $table->string('project');
-            $table->string('creator');
+            $table->string('creater');
             $table->string('owner');
             $table->string('followers');
             $table->timestamps();
