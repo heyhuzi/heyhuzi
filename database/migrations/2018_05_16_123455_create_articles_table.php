@@ -21,7 +21,8 @@ class CreateArticlesTable extends Migration
             $table->string('writer');
             $table->string('editor');
             $table->string('status');
-            $table->string('layout');
+            $table->string('type');
+            $table->string('tags');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateArticlesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('articles');
+        Schema::dropIfExists('articles');
     }
 }
