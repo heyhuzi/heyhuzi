@@ -3,31 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Article;
 
 class ArticleController extends Controller
 {
     public function index()
     {
-        // code...
+        return Article::all();
     }
 
-    public function show(Task $tast)
+    public function show($id)
     {
-        // code...
+        return Article::find($id);
     }
 
     public function store(Request $request)
     {
-        // code...
+        return Article::create($request->all());
     }
 
-    public function update(Request $request)
+    public function update(Request $request, $id)
     {
-        // code...
+        $article = Article::findOrFail($id);
+        $article->update($request->all());
+
+        return $article;
     }
 
-    public function delete(Request $request)
+    public function delete(Request $request, $id)
     {
-        // code...
+        $article = Article::findOrFail($id);
+        $article->delete();
+
+        return 204;
     }
 }
